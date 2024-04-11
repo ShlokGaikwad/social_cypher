@@ -7,13 +7,13 @@ const userSchema = mongoose.Schema(
     password:{type:String,required:true},
     contact:{type:Number,required:true},
     picture: { type: String },
-    friends: { type: [String] },
+    friends: { type: [String], default:[]},
   },
   {
     versionKey: false,
   }
 );
 
-const UserModel = mongoose.model("user", userSchema);
+const UserModel = mongoose.model("users", userSchema);
 
-module.exports = UserModel;
+module.exports = {UserModel};
